@@ -1,0 +1,67 @@
+{"account": {"guaranteedStopLossOrderMode": "ALLOWED", "hedgingEnabled": False, "id": "101-012-18798355-001", "createdTime": "2021-04-08T06: 50: 25.731401522Z", "currency": "EUR", "createdByUserID": 18798355, "alias": "Primary", "marginRate": "0.02", "lastTransactionID": "15135", "balance": "95222.7949", "openTradeCount": 1, "openPositionCount": 1, "pendingOrderCount": 0, "pl": "-4646.5384", "resettablePL": "-4646.5384", "resettablePLTime": "0", "financing": "-130.6783", "commission": "0.0000", "dividendAdjustment": "0.0116", "guaranteedExecutionFees": "0.0000", "lastDividendAdjustmentTimestamps": [
+            {"instrument": "NAS100_USD", "timestamp": "2021-07-08T22: 00: 06.756676674Z"
+            }
+        ], "orders": [], "positions": [
+            {"instrument": "EUR_USD", "long": {"units": "1000", "averagePrice": "1.15735", "pl": "-260.5871", "resettablePL": "-260.5871", "financing": "-15.6513", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "tradeIDs": ["15133"
+                    ], "unrealizedPL": "2.8973"
+                }, "short": {"units": "0", "pl": "-3.3366", "resettablePL": "-3.3366", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-263.9237", "resettablePL": "-263.9237", "financing": "-15.6513", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "2.8973", "marginUsed": "33.3000"
+            },
+            {"instrument": "USD_CZK", "long": {"units": "0", "pl": "-52.1900", "resettablePL": "-52.1900", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0", "pl": "-90.2711", "resettablePL": "-90.2711", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-142.4611", "resettablePL": "-142.4611", "financing": "0.0000", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "AUD_USD", "long": {"units": "0", "pl": "-38.2825", "resettablePL": "-38.2825", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0", "pl": "-26.4988", "resettablePL": "-26.4988", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-64.7813", "resettablePL": "-64.7813", "financing": "0.0000", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "NZD_USD", "long": {"units": "0", "pl": "-130.1334", "resettablePL": "-130.1334", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0", "pl": "-53.8575", "resettablePL": "-53.8575", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-183.9909", "resettablePL": "-183.9909", "financing": "0.0000", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "XAU_EUR", "long": {"units": "0", "pl": "-41.7000", "resettablePL": "-41.7000", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0", "pl": "0.0000", "resettablePL": "0.0000", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-41.7000", "resettablePL": "-41.7000", "financing": "0.0000", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "XAU_USD", "long": {"units": "0", "pl": "-115.8223", "resettablePL": "-115.8223", "financing": "-0.5602", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0", "pl": "0.0000", "resettablePL": "0.0000", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-115.8223", "resettablePL": "-115.8223", "financing": "-0.5602", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "BCO_USD", "long": {"units": "0", "pl": "462.9002", "resettablePL": "462.9002", "financing": "4.9009", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0", "pl": "-1414.6921", "resettablePL": "-1414.6921", "financing": "-51.0997", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-951.7919", "resettablePL": "-951.7919", "financing": "-46.1988", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "DE30_EUR", "long": {"units": "0.0", "pl": "-263.4000", "resettablePL": "-263.4000", "financing": "-29.4207", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0.0", "pl": "-48.0000", "resettablePL": "-48.0000", "financing": "-39.0731", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-311.4000", "resettablePL": "-311.4000", "financing": "-68.4938", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "NAS100_USD", "long": {"units": "0.0", "pl": "-133.9504", "resettablePL": "-133.9504", "financing": "-0.8969", "dividendAdjustment": "0.1445", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0.0", "pl": "137.8176", "resettablePL": "137.8176", "financing": "-2.4720", "dividendAdjustment": "-0.1329", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "3.8672", "resettablePL": "3.8672", "financing": "-3.3689", "commission": "0.0000", "dividendAdjustment": "0.0116", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "SPX500_USD", "long": {"units": "0.0", "pl": "-132.3429", "resettablePL": "-132.3429", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0.0", "pl": "-19.1276", "resettablePL": "-19.1276", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-151.4705", "resettablePL": "-151.4705", "financing": "0.0000", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "US2000_USD", "long": {"units": "0.0", "pl": "-334.4352", "resettablePL": "-334.4352", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0.0", "pl": "-60.0295", "resettablePL": "-60.0295", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-394.4647", "resettablePL": "-394.4647", "financing": "0.0000", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "US30_USD", "long": {"units": "0.0", "pl": "183.0458", "resettablePL": "183.0458", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0", "pl": "0.0000", "resettablePL": "0.0000", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "183.0458", "resettablePL": "183.0458", "financing": "0.0000", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "WTICO_USD", "long": {"units": "0", "pl": "-968.2073", "resettablePL": "-968.2073", "financing": "7.9608", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0", "pl": "-1239.8763", "resettablePL": "-1239.8763", "financing": "-4.3661", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-2208.0836", "resettablePL": "-2208.0836", "financing": "3.5947", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            },
+            {"instrument": "AU200_AUD", "long": {"units": "0.0", "pl": "-3.5614", "resettablePL": "-3.5614", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "short": {"units": "0", "pl": "0.0000", "resettablePL": "0.0000", "financing": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+                }, "pl": "-3.5614", "resettablePL": "-3.5614", "financing": "0.0000", "commission": "0.0000", "dividendAdjustment": "0.0000", "guaranteedExecutionFees": "0.0000", "unrealizedPL": "0.0000"
+            }
+        ], "trades": [
+            {"id": "15133", "instrument": "EUR_USD", "price": "1.15735", "openTime": "2021-11-03T14: 33: 45.323071395Z", "initialUnits": "1000", "initialMarginRequired": "33.3000", "state": "OPEN", "currentUnits": "1000", "realizedPL": "0.0000", "financing": "0.0000", "dividendAdjustment": "0.0000", "unrealizedPL": "2.8973", "marginUsed": "33.3000"
+            }
+        ], "unrealizedPL": "2.8973", "NAV": "95225.6922", "marginUsed": "33.3000", "marginAvailable": "95192.4065", "positionValue": "1000.0000", "marginCloseoutUnrealizedPL": "2.9635", "marginCloseoutNAV": "95225.7584", "marginCloseoutMarginUsed": "33.3000", "marginCloseoutPositionValue": "1000.0000", "marginCloseoutPercent": "0.00017", "withdrawalLimit": "95192.4065", "marginCallMarginUsed": "33.3000", "marginCallPercent": "0.00035"
+    }, "lastTransactionID": "15135"
+}

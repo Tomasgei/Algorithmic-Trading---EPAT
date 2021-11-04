@@ -17,7 +17,7 @@ class Instrument():
         return pd.read_csv(utils.get_instruments_data_filename())
     
     @classmethod
-    def gei_instruments_list(cls):
+    def get_instruments_list(cls):
         df = cls.get_instrument_df()
         return [Instrument(x) for x in df.to_dict(orient="records")]
 
