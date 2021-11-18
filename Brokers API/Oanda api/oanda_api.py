@@ -6,6 +6,13 @@ import configparser
 config = configparser.ConfigParser() 
 config.read("C:/Users/tomas/Dropbox/Prop-Trading Business/oanda.cfg") 
 
+
+"""
+This script is API client 
+"""
+
+
+
 class OandaAPI():
     """
     Initialize Oanda api connection 
@@ -17,12 +24,14 @@ class OandaAPI():
         self.account_id      =  config["oanda"]['account_id'] # Enter your account id
         self.headers         = {'Authorization': f'Bearer {self.api_key}',"Content-Type": "application/json"} # authetication header for secure api requests
 
-    def GetAccount(self):
+
+    def Get_Account(self):
         """
         Function type: Api Data Request
         Get the full details for a single Account that client has access to.
         Full pending Order, open Trade and open Position representations are provided
         """
+        url = "/v3/accounts/"
         try:
             response = self.session.get(f"{self.oanda_api_url}/v3/accounts/"+self.account_id,headers=self.headers)
             data = response.json()
@@ -30,13 +39,13 @@ class OandaAPI():
             print(f"Error wit getting account {self.account_id}"+response.status_code)
         return response.status_code, data
     
-    def GetAccountBalance(self):
+    def Get_Account_Balance(self):
         """
         Function type: Api Data Request
         Get last account balance level
         Returns: float
         """
-        response = self.GetAccount()
+        response = self.Get_Account()
         code, data = response
         if code == 200:
             balance = data["account"]["balance"]
@@ -44,13 +53,13 @@ class OandaAPI():
         else:
             return None
 
-    def GetAccountMarginUsed(self):
+    def Get_Account_Margin_Used(self):
         """
         Function type: Api Data Request
         Get level of margin used to maintain all positions
         Returns: float
         """
-        response = self.GetAccount()
+        response = self.Get_Account()
         code, data = response
         if code == 200:
             margin = data["account"]["marginUsed"]
@@ -58,13 +67,13 @@ class OandaAPI():
         else:
             return None
 
-    def GetAccountMarginAvailable(self):
+    def Get_Account_Margin_Available(self):
         """
         Function type: Api Data Request
         Get level of margin available to open new positions
         Returns: float
         """
-        response = self.GetAccount()
+        response = self.Get_Account()
         code, data = response
         if code == 200:
             margin = data["account"]["marginAvailable"]
@@ -73,7 +82,7 @@ class OandaAPI():
             return None
 
 
-    def GetAllInstruments(self):
+    def Get_All_Instruments(self):
         """
         Function type: Api Data Request
         Get list of tradable instruments for the given Account.
@@ -86,47 +95,56 @@ class OandaAPI():
             print(response.status_code)
         return response.status_code, data
 
-    def GetInstrumentDataFrame(self):
+    def Get_Instruments_DataFrame(self):
         """
         Function type: Data Manipulation
         Get DataFrame of trading instruments.
         """
-        code, data = self.GetAllInstruments()
+        code, data = self.Get_All_Instruments()
         if code == 200:
             df =pd.DataFrame(data["instruments"])
             return df[["name","type","displayName","pipLocation","marginRate"]]
         else:
             return None
 
-    def SaveInstruments(self):
+    def Save_Instruments(self):
         """
         Function type: Data Manipulation
         Save list of instruments to .csv
         """
-        df = self.GetInstrumentDataFrame()
+        df = self.Get_Instruments_DataFrame()
         if df is not None:
             df.to_csv(utils.get_instruments_data_filename())
 
-    def GetCandleData(self, symbol, granularity, price, count):
+    def Get_Candle_Data(self, symbol, granularity="H1", count=None, start=None, end=None ):
         """
         Function type: Api Data Request
         Fetch candlestick data for an instrument
         """
+        url = f"{self.oanda_api_url}/v3/instruments/"+symbol+"/candles"
         params={
             "granularity":granularity,
-            "price":price,
+            "price":"MBA",
             "count":count 
         }
 
-        try:
-            response = self.session.get(f"{self.oanda_api_url}/v3/instruments/"+symbol+"/candles",headers=self.headers, params=params)
-            data = response.json()
-            print(response.status_code)
-        except:
-            print(response.status_code)
-        return response.status_code, data
+        if start is not None and end is not None:
+            params["from"]  = int(start.timestamp())
+            params["to"]    = int(end.timestamp())
+        elif count is not None:
+            params["count"] = count
+        else:
+            params["count"] = 4000
+    
+        response = self.session.get(url, headers=self.headers, params=params)
+        
+        if response.status_code != 200:
+            return response.status_code,None
 
-    def GetOpenPositions(self):
+        return response.status_code, response.json()
+    
+
+    def Get_Open_Positions(self):
         """
         Function type: Api Data Request
         This function gets count number of all open positions on account 
@@ -134,8 +152,9 @@ class OandaAPI():
         {"instrument":"EUR_USD","longUnits":"10000",shortUnits":"10000"}
         Returns: Integer, List of dict 
         """
+        url = f"{self.oanda_api_url}/v3/accounts/"+self.account_id+"/openPositions"
         try:
-            response = self.session.get(f"{self.oanda_api_url}/v3/accounts/"+self.account_id+"/openPositions",headers=self.headers)
+            response = self.session.get(url,headers=self.headers)
             data = response.json()
             openPositions = int(len(data["positions"]))
             if openPositions >0:
@@ -154,6 +173,7 @@ class OandaAPI():
 
 
     def PlaceTrade(self,symbol,units):
+        url = f"{self.oanda_api_url}/v3/accounts/"+self.account_id+"/orders"
         data = {
             "order": {
             "units": units,
@@ -163,7 +183,7 @@ class OandaAPI():
             "positionFill": "DEFAULT"
             }
         }
-        response = self.session.post(f"{self.oanda_api_url}/v3/accounts/"+self.account_id+"/orders",headers=self.headers, json=data)
+        response = self.session.post(url ,headers=self.headers, json=data)
         json_data = response.json()
 
         order_id = 0
@@ -178,9 +198,13 @@ class OandaAPI():
 
 if __name__ == '__main__':
     api=OandaAPI()
-    print(api.GetAccountMarginUsed())
-    print(api.GetAccountBalance())
-    print(api.GetOpenPositions())
+    print(api.Get_Account_Margin_Used())
+    print(api.Get_Account_Balance())
+    print(api.Get_Open_Positions())
+
+    start = utils.get_utc_dt_from_string("2016-02-03 15:00:00")
+    end = utils.get_utc_dt_from_string("2016-02-07 15:00:00")
+    print(api.Get_Candle_Data("EUR_NOK", granularity="H1", start=start, end=end ))
  
 
 
